@@ -1,16 +1,5 @@
-
-# requirements 
-```
-npm install -g JSON.sh #requirements
-```
-
-# install 
-```
-npm install -g pm2cmd
-```
-
-# usage 
-```
+console.log(`
+Usage: 
   pm2cd  <pm2_id>  cd到项目目录
   
   pm2reload <pm2_id> 重启并查看标准输出日志
@@ -20,4 +9,4 @@ npm install -g pm2cmd
   pm2out <pm2_id> vim查看out日志文件
 
   pm2error <pm2_id> vim查看error日志文件
-```
+`);

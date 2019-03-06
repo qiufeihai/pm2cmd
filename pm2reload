@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+echo $1
+if [ -n "$1" ]; then
+pm2id=$1
+else
+echo Usage: pm2reload pm2_id
+exit 1
+fi
+
+pm2 reload $pm2id;
+pm2 log $pm2id;

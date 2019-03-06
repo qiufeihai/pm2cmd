@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+if [ -n "$1" ]; then
+pm2id=$1
+else
+echo Usage: svnup pm2_id
+exit 1
+fi
+
+proj_dir=$(pm2 jlist | JSON.sh | grep -P '^\[\d+\].*pm_id":'$pm2id',' |  grep -Po 'pm_cwd":"\K.*?(?=")')
+echo cd $proj_dir
+cd "$proj_dir"
+svn up;
+pm2 reload $pm2id;
+pm2 log $pm2id;

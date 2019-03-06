@@ -1,0 +1,27 @@
+{
+  "name": "pm2cmd",
+  "version": "1.0.2",
+  "description": "pm2 cmd",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiufeihai/pm2cmd.git"
+  },
+  "bin": {
+    "pm2cd": "./pm2cd",
+    "pm2error": "./pm2error",
+    "pm2out": "./pm2out",
+    "pm2reload": "./pm2reload",
+    "pm2up": "./pm2up"
+  },
+  "keywords": ["pm2", "bash"],
+  "author": "feihai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qiufeihai/pm2cmd/issues"
+  },
+  "homepage": "https://github.com/qiufeihai/pm2cmd#readme"
+}

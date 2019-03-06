@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+if [ -n "$1" ]; then
+pm2id=$1
+else
+echo Usage: $0 pm2_id
+exit1
+fi
+vim $(pm2 info $pm2id | awk -F '│' '/out log path/{printf $3}')
