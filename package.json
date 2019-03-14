@@ -11,11 +11,13 @@
     "url": "git+https://github.com/qiufeihai/pm2cmd.git"
   },
   "bin": {
+    "pm2cmd": "./pm2cmd",
     "pm2cd": "./pm2cd",
     "pm2error": "./pm2error",
     "pm2out": "./pm2out",
     "pm2reload": "./pm2reload",
-    "pm2up": "./pm2up"
+    "pm2up": "./pm2up",
+    "pm2log": "./pm2log"
   },
   "keywords": ["pm2", "bash"],
   "author": "feihai",

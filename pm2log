@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+if [ -n "$1" -a -n "$2" ]; then
+pm2id=$1
+filename_pattern=$2
+else
+echo "Usage: $0 <pm2_id> <filename_pattern> [content_pattern]"
+exit 1
+fi
+content_pattern=$3
+logfile_prefix=$(pm2 jlist | JSON.sh | grep -P '^\[\d+\].*pm_id":'$pm2id',' |  grep -Po 'pm_out_log_path":"\K.*?(?=")')
+logfile_prefix=${logfile_prefix%.log}
+zgrep "${content_pattern-'.*'}" `ls $logfile_prefix*${filename_pattern}*.gz`
