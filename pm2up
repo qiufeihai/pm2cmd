@@ -6,7 +6,7 @@ echo Usage: svnup pm2_id
 exit 1
 fi
 
-proj_dir=$(pm2 jlist | JSON.sh | grep -P '^\[\d+\].*pm_id":'$pm2id',' |  grep -Po 'pm_cwd":"\K.*?(?=")')
+proj_dir=$(pm2 prettylist | sed -n '/pm_cwd/ h; /pm_id: '$pm2id'\b/ {g;p;q;}' | grep -Po "'\K.*?(?=')")
 echo cd $proj_dir
 cd "$proj_dir"
 svn up;
