@@ -5,6 +5,6 @@ else
 echo Usage: $0 pm2_id
 exit 1
 fi
-proj_dir=$(pm2 prettylist | sed -n '/pm_cwd/ h; /pm_id: '$pm2id'\b/ {g;p;q;}' | grep -Po "'\K.*?(?=')")
+proj_dir=$(pm2 info $pm2id  | grep -Po 'exec cwd.*?│ \K.*(?=\b)')
 echo $proj_dir
 cd $proj_dir;

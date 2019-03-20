@@ -11,5 +11,5 @@ Usage:
 
   pm2error <pm2_id> vim查看error日志文件
 
-  pm2log <pm2_id> <filename_pattern> [content_pattern] 查看某项目的压缩日志内容
+  pm2log <pm2_id> <date_pattern> 查看某项目的压缩日志内容
 EOF
