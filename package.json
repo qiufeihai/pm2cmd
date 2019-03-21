@@ -1,6 +1,6 @@
 {
   "name": "pm2cmd",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "pm2 cmd",
   "main": "index.js",
   "scripts": {

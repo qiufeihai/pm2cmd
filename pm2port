@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# 
+# 列出pm2启动的node程序都监听了哪些端口
+#
+for line in  $(netstat -tlunp | grep node | awk '{ print $4 "," $7}') ; do
+  re='(.*),([[:digit:]]+)/node'
+  [[ $line =~ $re ]] && {
+    ppid=$(pstree ${BASH_REMATCH[2]} -g | head -1 | grep -Po 'node\(\K[[:digit:]]*')
+    projectName=$(pm2 l | grep $ppid | awk -F '│ ' '{print $2}')
+    printf "%s --> %s\n" $projectName  ${BASH_REMATCH[1]}
+  }
+done

@@ -18,4 +18,6 @@ npm install -g pm2cmd
   pm2error <pm2_id> vim查看error日志文件
 
   pm2log <pm2_id> <date_pattern> 查看某项目的压缩日志内容件
+
+  pm2port 列出pm2启动的node程序都监听了哪些端口
 ```
