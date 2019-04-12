@@ -20,4 +20,6 @@ npm install -g pm2cmd
   pm2log <pm2_id> <date_pattern> 查看某项目的压缩日志内容件
 
   pm2port 列出pm2启动的node程序都监听了哪些端口
+
+  pm2l [name_pattern] 根据appName模糊查询pm2列表
 ```

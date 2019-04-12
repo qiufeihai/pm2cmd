@@ -7,6 +7,6 @@ echo "Usage: $0 <pm2_id> <date_pattern>"
 exit 1
 fi
 content_pattern=$3
-logfile_prefix=$(pm2 info 2  | grep -Po 'out log path.*?│ \K.*(?=\b)')
+logfile_prefix=$(pm2 info $1  | grep -Po 'out log path.*?│ \K.*(?=\b)')
 logfile_prefix=${logfile_prefix%.log}
 zgrep '' `ls $logfile_prefix*${filename_pattern}*.gz`
