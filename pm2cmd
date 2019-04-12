@@ -20,8 +20,8 @@ Usage:
   pm2id [num] 获取最后num次使用的pm2命令(最后包含pm2_id的命令)
 EOF
 
-grep -q 'alias.*pm2cd=' ~/.bashrc || echo "alias pm2cd='. pm2cd'" >> ~/.bashrc
-grep -q 'alias.*pm2cd=' ~/.zshrc || echo "alias pm2cd='. pm2cd'" >> ~/.zshrc
+grep -q 'alias.*pm2cd=' ~/.bashrc || echo "alias pm2cd='. pm2cd'" >> ~/.bashrc >& /dev/null
+grep -q 'alias.*pm2cd=' ~/.zshrc || echo "alias pm2cd='. pm2cd'" >> ~/.zshrc >& /dev/null
 
-grep -q 'alias.*pm2id=' ~/.bashrc || echo "alias pm2id='. pm2id'" >> ~/.bashrc
-grep -q 'alias.*pm2id=' ~/.zshrc || echo "alias pm2id='. pm2id'" >> ~/.zshrc
+grep -q 'alias.*pm2id=' ~/.bashrc || echo "alias pm2id='. pm2id'" >> ~/.bashrc >& /dev/null
+grep -q 'alias.*pm2id=' ~/.zshrc || echo "alias pm2id='. pm2id'" >> ~/.zshrc >& /dev/null

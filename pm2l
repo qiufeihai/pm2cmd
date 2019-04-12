@@ -4,5 +4,5 @@
   echo "Usage: $0 [name_pattern]"
   exit 0
 }
-name_pattern=${1:-'*'}
+name_pattern=${1:-'.*'}
 pm2 l | grep -i -e "$name_pattern" -e 'App name'
