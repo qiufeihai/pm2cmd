@@ -22,4 +22,6 @@ npm install -g pm2cmd
   pm2port 列出pm2启动的node程序都监听了哪些端口
 
   pm2l [name_pattern] 根据appName模糊查询pm2列表
+
+  pm2id [num] 获取最后num次使用的pm2命令(最后包含pm2_id的命令)
 ```

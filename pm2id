@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+[[ "$1" == '-h' || "$1" == '--help' ]] && {
+  echo "Usage: $0  [num] 获取最后num次使用的pm2命令(最后包含pm2_id的命令)"
+  exit 0
+}
+num=${1:-'1'}
+history | grep -P '[[:digit:]]+  pm2.*\s\K[[:digit:]]+' | tail -$num
