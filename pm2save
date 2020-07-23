@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+PM2_HOME=${PM2_HOME:-~/.pm2}
+[ -d "$1" ] && PM2_HOME=$1
+
+[ -d "$PM2_HOME" ] || {
+  echo "Usage: $0 <pm2_home_dir>"
+  exit 1;
+}
+
+[ -e "$PM2_HOME/dump.pm2" ] || {
+  echo "$PM2_HOME/dump.pm2文件不存在"
+  exit 1;
+}
+
+pm2 save && cp $PM2_HOME/dump.pm2 $PM2_HOME/dump.pm2.bak && echo "备份$PM2_HOME/dump.pm2为$PM2_HOME/dump.pm2.bak"
