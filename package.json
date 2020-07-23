@@ -21,7 +21,9 @@
     "pm2log": "./pm2log",
     "pm2port": "./pm2port",
     "pm2l": "./pm2l",
-    "pm2id": "./pm2id"
+    "pm2id": "./pm2id",
+    "pm2save": "./pm2save",
+    "pm2restore": "./pm2restore"
   },
   "keywords": ["pm2", "bash"],
   "author": "feihai",
